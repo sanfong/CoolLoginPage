@@ -21,16 +21,14 @@ body {
     grid-template-areas: "left right";
     width: 100vw;
     height: 100vh;
-    /* background-color: #f2f2f2; */
     background-color: lightskyblue;
+    overflow-x: hidden;
 }
 
 .center-div {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
-    /* padding: 15px; */
 }
 
 .left-content {
@@ -45,10 +43,10 @@ body {
     position: relative;
     border-radius: 10px;
     background-color: white;
-    width: 280px;
+    width: 260px;
     padding: 70px 50px 30px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
-    transition: all 0.5s ease;
+    transition: all 0.6s ease, width 0s;
 }
 
 .left-content>.card {
@@ -121,8 +119,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 1;
-    left: 0%;
-    transition: all 0.5s ease;
+    width: 200%;
+    left: -100%;
+    transition: all 0.6s ease;
 }
 
 #register:target~.cover-img {
@@ -139,7 +138,7 @@ body {
     visibility: hidden;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 720px) {
     .container {
         grid-template-columns: 1fr;
         grid-template-areas: "mid";
@@ -152,6 +151,11 @@ body {
 
     .right-content {
         grid-area: mid;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 260px;
     }
 
     .cover-img {
